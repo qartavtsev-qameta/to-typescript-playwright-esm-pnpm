@@ -14,7 +14,7 @@ test('Должен отображаться логотип ТестОпс при
   await allure.tags('Логотип', 'Домашняя страница', 'Интерфейс');
 
   await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
-    await page.goto('https://docs.qameta.io/allure-testops/');
+    await page.goto('https://qatools.ru/docs/);
   });
 
   await allure.step('Проверить, что логотип ТестОпс виден', async () => {
