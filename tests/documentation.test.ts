@@ -227,7 +227,7 @@ test('Должны отображаться боковая панель и ра�
   await allure.description('Проверяет, что боковая панель и раздел "Начало работы" видны на главной странице');
   await allure.epic('Документация ТестОпс');
   await allure.feature('Навигация');
-  await allure.story('Sidebar');
+  await allure.story('Боковая панель');
   await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
   await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
@@ -265,94 +265,94 @@ test('Должны отображаться боковая панель и ра�
 
 // Test #10
 
-test('Should navigate to the Install page via the link', async ({ page }) => {
-  await allure.description('Verifies that the user can navigate to the Install page via the "to deploy Allure TestOps" link');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Navigation');
-  await allure.story('Links');
-  await allure.tags('Link', 'Navigation', 'UI');
+test('Должен перейти на страницу "Способы установки ТестОпс" через ссылку', async ({ page }) => {
+  await allure.description('Проверяет, что пользователь может перейти на страницу "Способы установки ТестОпс" через ссылку "в вашей инфраструктуре"');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Навигация');
+  await allure.story('Ссылки');
+  await allure.tags('Ссылка', 'Навигация', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Locate the "to deploy Allure TestOps" link', async () => {
+  await allure.step('Найти ссылку "в вашей инфраструктуре"', async () => {
     const deployLink = page.locator('a', { hasText: 'to deploy Allure TestOps' });
     await expect(deployLink).toBeVisible();
   });
 
-  await allure.step('Click the "to deploy Allure TestOps" link', async () => {
+  await allure.step('Нажать на ссылку "в вашей инфраструктуре"', async () => {
     const installLink = page.locator('a', { hasText: 'to deploy Allure TestOps' });
     await installLink.click();
   });
 
-  await allure.step('Verify that the URL includes "install"', async () => {
+  await allure.step('Проверить, что URL включает "install"', async () => {
     await expect(page).toHaveURL(/.*install/);
   });
 
-  await allure.step('Verify that the page header is "Install Allure TestOps"', async () => {
+  await allure.step('Проверить, что заголовок страницы "Способы установки ТестОпс"', async () => {
     await expect(page.locator('h1')).toContainText('Install Allure TestOps');
   });
 });
 
 // Test #11
 
-test('Should navigate to the Terms and Concepts page via the link (intentionally broken)', async ({ page }) => {
-  await allure.description('Verifies that the user can navigate to the Terms and Concepts page via the "terms and concepts of Allure TestOp" link');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Navigation');
-  await allure.story('Links');
-  await allure.tags('Error', 'Link', 'Navigation', 'UI');
+test('Должен перейти на страницу "Термины и определения" через ссылку (намеренно сломанный)', async ({ page }) => {
+  await allure.description('Проверяет, что пользователь может перейти на страницу "Термины и определения" через ссылку "терминах и определениях ТестОпс"');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Навигация');
+  await allure.story('Ссылки');
+  await allure.tags('Ошибка', 'Ссылка', 'Навигация', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Locate the "terms and concepts of Allure TestOps" link', async () => {
+  await allure.step('Найти ссылку "терминах и определениях ТестОпс"', async () => {
     const deployLink = page.locator('a', { hasText: 'terms and concepts of Allure TestOps' });
     await expect(deployLink).toBeVisible();
   });
 
-  await allure.step('Click the "terms and concepts of Allure TestOps" link', async () => {
+  await allure.step('Нажать на ссылку "терминах и определениях ТестОпс"', async () => {
     const installLink = page.locator('a', { hasText: 'intentionally-incorrect-text' });
     await installLink.click();
   });
 
-  await allure.step('Verify that the URL includes "terms-concepts"', async () => {
+  await allure.step('Проверить, что URL включает "terms-concepts"', async () => {
     await expect(page).toHaveURL(/.*terms-concepts/);
   });
 
-  await allure.step('Verify that the page header is "Terms and concepts"', async () => {
+  await allure.step('Проверить, что заголовок страницы "Термины и определения"', async () => {
     await expect(page.locator('h1')).toContainText('Terms and concepts');
   });
 });
 
 // Test #12
 
-test('Should search documentation via Ctrl+K shortcut (intentionally broken)', async ({ page }) => {
-  await allure.description('Verifies search behavior using Ctrl+K shortcut');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Search');
-  await allure.story('Shortcut Search');
-  await allure.tags('Error', 'Shortcut', 'Search');
+test('Должен выполнить поиск документации с помощью сочетания клавиш Ctrl+K (намеренно сломанный)', async ({ page }) => {
+  await allure.description('Проверяет поведение поиска с использованием сочетания клавиш Ctrl+K');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Поиск');
+  await allure.story('Поиск по сочетанию клавиш');
+  await allure.tags('Ошибка', 'Сочетанию клавиш', 'Поиск');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Press Ctrl+K to open the search input', async () => {
+  await allure.step('Нажать Ctrl+K для открытия поля поиска', async () => {
     await page.keyboard.press('Control+KeyK');
   });
 
-  await allure.step('Fill in the search input with "Jenkins"', async () => {
+  await allure.step('Заполнить поле поиска значением "Jenkins"', async () => {
     await page.fill('input[placeholder="Search"]', 'Jenkins');
   });
 
-  await allure.step('Press Enter to execute the search', async () => {
+  await allure.step('Нажать Enter для выполнения поиска', async () => {
     await page.keyboard.press('Enter');
   });
 
-  await allure.step('Verify that search results are displayed', async () => {
+  await allure.step('Проверить, что отображаются результаты поиска', async () => {
     await expect(page.locator('h1')).toContainText('Search results');
   });
 });
