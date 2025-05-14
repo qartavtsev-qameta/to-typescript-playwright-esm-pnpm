@@ -93,78 +93,78 @@ test('Должен отображаться правильный заголов�
 
 // Test #4
 
-test('Should navigate to the Release Notes page via the sidebar', async ({ page }) => {
-  await allure.description('Verifies that the user can navigate to the Release Notes page via the sidebar');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Navigation');
-  await allure.story('Sidebar');
-  await allure.tags('Sidebar', 'Navigation', 'UI');
+test('Должен перейти на страницу "Информация о релизах ТестОпс" через боковую панель', async ({ page }) => {
+  await allure.description('Проверяет, что пользователь может перейти на страницу "Информация о релизах ТестОпс" через боковую панель');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Навигация');
+  await allure.story('Боковая панель');
+  await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Click the "Release notes" link on the sidebar', async () => {
+  await allure.step('Нажать на ссылку "Информация о релизах" на боковой панели', async () => {
     await page.click('text=Release notes');
   });
 
-  await allure.step('Verify that the URL includes "release-notes"', async () => {
+  await allure.step('Проверить, что URL включает "release-notes"', async () => {
     await expect(page).toHaveURL(/.*release-notes/);
   });
 
-  await allure.step('Verify that the page header is "Release Notes"', async () => {
+  await allure.step('Проверить, что заголовок страницы "Информация о релизах ТестОпс"', async () => {
     await expect(page.locator('h1')).toContainText('Release Notes');
   });
 });
 
 // Test #5
 
-test('Should navigate to the FAQ page via the sidebar', async ({ page }) => {
-  await allure.description('Verifies that the user can navigate to the FAQ page via the sidebar');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Navigation');
-  await allure.story('Sidebar');
-  await allure.tags('Sidebar', 'Navigation', 'UI');
+test('Должен перейти на страницу "Часто задаваемые вопросы" через боковую панель', async ({ page }) => {
+  await allure.description('Проверяет, что пользователь может перейти на страницу "Часто задаваемые вопросы" через боковую панель');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Навигация');
+  await allure.story('Боковая панель');
+  await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Click the "FAQ" link on the sidebar', async () => {
+  await allure.step('Нажать на ссылку "Часто задаваемые вопросы" на боковой панели', async () => {
     await page.click('text=FAQ');
   });
 
-  await allure.step('Verify that the URL includes "faq"', async () => {
+  await allure.step('Проверить, что URL включает "faq"', async () => {
     await expect(page).toHaveURL(/.*faq/);
   });
 
-  await allure.step('Verify that the page header is "Frequently Asked Questions"', async () => {
+  await allure.step('Проверить, что заголовок страницы "Часто задаваемые вопросы"', async () => {
     await expect(page.locator('h1')).toContainText('Frequently Asked Questions');
   });
 });
 
 // Test #6
 
-test('Should navigate to the Architecture page via the sidebar', async ({ page }) => {
-  await allure.description('Verifies that the user can navigate to the Architecture page via the sidebar');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Navigation');
-  await allure.story('Sidebar');
-  await allure.tags('Sidebar', 'Navigation', 'UI');
+test('Должен перейти на страницу "Архитектура ТестОпс" через боковую панель', async ({ page }) => {
+  await allure.description('Проверяет, что пользователь может перейти на страницу "Архитектура ТестОпс" через боковую панель');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Навигация');
+  await allure.story('Боковая панель');
+  await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Click the "Architecture" link on the sidebar', async () => {
+  await allure.step('Нажать на ссылку "Архитектура" на боковой панели', async () => {
     await page.click('text=Architecture');
   });
 
-  await allure.step('Verify that the URL includes "architecture"', async () => {
+  await allure.step('Проверить, что URL включает "architecture"', async () => {
     await expect(page).toHaveURL(/.*architecture/);
   });
 
-  await allure.step('Verify that the page header is "Allure TestOps architecture"', async () => {
+  await allure.step('Проверить, что заголовок страницы "Архитектура ТестОпс"', async () => {
     await expect(page.locator('h1')).toContainText('Allure TestOps architecture');
   });
 });
