@@ -6,18 +6,18 @@ import { allure } from 'allure-playwright';
 
 // Test #1
 
-test('Should display the Allure TestOps logo when visiting the homepage', async ({ page }) => {
-  await allure.description('Verifies that the Allure TestOps logo is visible when visiting the documentation homepage');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Content');
-  await allure.story('Logo');
-  await allure.tags('Logo', 'Homepage', 'UI');
+test('Должен отображаться логотип ТестОпс при посещении домашней страницы', async ({ page }) => {
+  await allure.description('Проверяет, что логотип ТестОпс виден при посещении домашней страницы документации');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Контент');
+  await allure.story('Логотип');
+  await allure.tags('Логотип', 'Домашняя страница', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Verify that the Allure TestOps logo is visible', async () => {
+  await allure.step('Проверить, что логотип ТестОпс виден', async () => {
     const logo = page.locator('img[alt="TestOps logo"]');
     await expect(logo).toBeVisible();
   });
@@ -25,66 +25,66 @@ test('Should display the Allure TestOps logo when visiting the homepage', async 
 
 // Test #2
 
-test('Should display the correct header when visiting the homepage', async ({ page }) => {
-  await allure.description('Verifies that the main heading includes "Allure TestOps" when visiting the homepage');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Content');
-  await allure.story('Page Header');
-  await allure.tags('Homepage', 'UI');
+test('Должен отображаться корректный заголовок при посещении главной страницы', async ({ page }) => {
+  await allure.description('Проверяет, что основной заголовок включает "О продукте" при посещении главной страницы');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Контент');
+  await allure.story('Заголовок страницы');
+  await allure.tags('Домашняя страница', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Verify that the page header includes "Allure TestOps"', async () => {
+  await allure.step('Проверить, что заголовок страницы включает "О продукте"', async () => {
     await expect(page.locator('h1')).toContainText('Allure TestOps');
   });
 });
 
 // Test #3A - test uses 'allure.step' wrappers for steps
 
-test('Should display the correct title when visiting the homepage - using allure.step() wrappers', async ({ page }) => {
-  await allure.description('Verifies that the page title includes "Allure TestOps" when visiting the homepage');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Content');
-  await allure.story('Page Title');
-  await allure.tags('Homepage', 'UI');
+test('Должен отображаться правильный заголовок при посещении главной страницы - с использованием обертки allure.step()', async ({ page }) => {
+  await allure.description('Проверяет, что заголовок страницы включает "ТестОпс" при посещении главной страницы');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Контент');
+  await allure.story('Заголовок страницы');
+  await allure.tags('Домашняя страница', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Verify that the page title includes "Allure TestOps"', async () => {
+  await allure.step('Проверить, что заголовок страницы включает "ТестОпс"', async () => {
     await expect(page).toHaveTitle(/Allure TestOps/);
   });
 });
 
 // Test #3B - test uses 'test.step' wrappers for steps
 
-test('Should display the correct title when visiting the homepage - using test.step() wrappers', async ({ page }) => {
-  await allure.description('Verifies that the page title includes "Allure TestOps" when visiting the homepage');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Content');
-  await allure.story('Page Title');
-  await allure.tags('Homepage', 'UI');
+test('Должен отображаться правильный заголовок при посещении главной страницы - с использованием обертки test.step()', async ({ page }) => {
+  await allure.description('Проверяет, что заголовок страницы включает "ТестОпс" при посещении главной страницы');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Контент');
+  await allure.story('Заголовок страницы');
+  await allure.tags('Домашняя страница', 'Интерфейс');
 
-  await test.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await test.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await test.step('Verify that the page title includes "Allure TestOps"', async () => {
+  await test.step('Проверить, что заголовок страницы включает "ТестОпс"', async () => {
     await expect(page).toHaveTitle(/Allure TestOps/);
   });
 });
 
 // Test #3C - test has no 'test.step' or 'allure.step' wrappers for steps
 
-test('Should display the correct title when visiting the homepage - without using step wrappers', async ({ page }) => {
-  await allure.description('Verifies that the page title includes "Allure TestOps" when visiting the homepage');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Content');
-  await allure.story('Page Title');
-  await allure.tags('Homepage', 'UI');
+test('Должен отображаться правильный заголовок при посещении главной страницы - без использования обертки для шагов', async ({ page }) => {
+  await allure.description('Проверяет, что заголовок страницы включает "ТестОпс" при посещении главной страницы');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Контент');
+  await allure.story('Заголовок страницы');
+  await allure.tags('Домашняя страница', 'Интерфейс');
 
   await page.goto('https://docs.qameta.io/allure-testops/');
 
