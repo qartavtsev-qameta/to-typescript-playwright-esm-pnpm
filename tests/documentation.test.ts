@@ -90,7 +90,6 @@ test('Должен отображаться корректный заголов�
   await page.goto('https://qatools.ru/docs/');
 
   await expect(page).toHaveTitle(/ТестОпсs/);
-  });
 });
 
 // Test #4
