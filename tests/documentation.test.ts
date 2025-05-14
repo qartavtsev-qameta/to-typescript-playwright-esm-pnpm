@@ -34,11 +34,11 @@ test('Должен отображаться корректный заголов�
   await allure.tags('Домашняя страница', 'Интерфейс');
 
   await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
-    await page.goto('https://docs.qameta.io/allure-testops/');
+    await page.goto('https://qatools.ru/docs/');
   });
 
   await allure.step('Проверить, что заголовок на странице включает "О продукте"', async () => {
-    await expect(page.locator('h1')).toContainText('Allure TestOps');
+    await expect(page.locator('h1')).toContainText('О продукте');
   });
 });
 
@@ -52,11 +52,11 @@ test('Должен отображаться корректный заголов�
   await allure.tags('Домашняя страница', 'Интерфейс');
 
   await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
-    await page.goto('https://docs.qameta.io/allure-testops/');
+    await page.goto('https://qatools.ru/docs/');
   });
 
   await allure.step('Проверить, что заголовок вкладки включает "ТестОпс"', async () => {
-    await expect(page).toHaveTitle(/Allure TestOps/);
+    await expect(page).toHaveTitle(/ТестОпс/);
   });
 });
 
@@ -70,11 +70,11 @@ test('Должен отображаться корректный заголов�
   await allure.tags('Домашняя страница', 'Интерфейс');
 
   await test.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
-    await page.goto('https://docs.qameta.io/allure-testops/');
+    await page.goto('https://qatools.ru/docs/');
   });
 
   await test.step('Проверить, что заголовок вкладки включает "ТестОпс"', async () => {
-    await expect(page).toHaveTitle(/Allure TestOps/);
+    await expect(page).toHaveTitle(/ТестОпс/);
   });
 });
 
@@ -87,9 +87,9 @@ test('Должен отображаться корректный заголов�
   await allure.story('Заголовок вкладки');
   await allure.tags('Домашняя страница', 'Интерфейс');
 
-  await page.goto('https://docs.qameta.io/allure-testops/');
+  await page.goto('https://qatools.ru/docs/');
 
-  await expect(page).toHaveTitle(/Allure TestOps/);
+  await expect(page).toHaveTitle(/ТестОпсs/);
 });
 
 // Test #4
