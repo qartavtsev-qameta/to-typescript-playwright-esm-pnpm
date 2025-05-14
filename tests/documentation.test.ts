@@ -37,9 +37,9 @@ test('Должен отображаться корректный заголов�
     await page.goto('https://qatools.ru/docs/');
   });
 
-  //await allure.step('Проверить, что заголовок на странице включает "О продукте"', async () => {
-  //  await expect(page.locator('h1')).toContainText('О продукте');
-  //});
+  await allure.step('Проверить, что заголовок на странице включает "О продукте"', async () => {
+    await expect(page.locator('h1')).toContainText('о-продукте');
+  });
 });
 
 // Test #3A - test uses 'allure.step' wrappers for steps
@@ -55,9 +55,9 @@ test('Должен отображаться корректный заголов�
     await page.goto('https://qatools.ru/docs/');
   });
 
-  //await allure.step('Проверить, что заголовок вкладки включает "ТестОпс"', async () => {
-  //  await expect(page).toHaveTitle(/ТестОпс/);
-  //});
+  await allure.step('Проверить, что заголовок вкладки включает "ТестОпс"', async () => {
+    await expect(page).toHaveTitle(/ТестОпс/);
+  });
 });
 
 // Test #3B - test uses 'test.step' wrappers for steps
@@ -73,9 +73,9 @@ test('Должен отображаться корректный заголов�
     await page.goto('https://qatools.ru/docs/');
   });
 
-  //await test.step('Проверить, что заголовок вкладки включает "ТестОпс"', async () => {
-  //  await expect(page).toHaveTitle(/ТестОпс/);
-  //});
+  await test.step('Проверить, что заголовок вкладки включает "ТестОпс"', async () => {
+    await expect(page).toHaveTitle(/ТестОпс/);
+  });
 });
 
 // Test #3C - test has no 'test.step' or 'allure.step' wrappers for steps
@@ -89,7 +89,7 @@ test('Должен отображаться корректный заголов�
 
   await page.goto('https://qatools.ru/docs/');
 
-  //await expect(page).toHaveTitle(/ТестОпс/);
+  await expect(page).toHaveTitle(/ТестОпс/);
 });
 
 // Test #4
