@@ -171,94 +171,94 @@ test('Должен перейти на страницу "Архитектура 
 
 // Test #7
 
-test.skip('Should navigate to the Features page via the sidebar (intentionally skipped)', async ({ page }) => {
-  await allure.description('Verifies that the user can navigate to the Features page via the sidebar');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Navigation');
-  await allure.story('Sidebar');
-  await allure.tags('Sidebar', 'Navigation', 'UI');
+test.skip('Должен перейти на страницу "Возможности ТестОпс" через боковую панель (намеренно пропущенный)', async ({ page }) => {
+  await allure.description('Проверяет, что пользователь может перейти на страницу "Возможности ТестОпс" через боковую панель');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Навигация');
+  await allure.story('Боковая панель');
+  await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Click the "Features" link on the sidebar', async () => {
+  await allure.step('Нажать на ссылку "Возможности" на боковой панели', async () => {
     await page.click('text=Features');
   });
 
-  await allure.step('Verify that the URL includes "features"', async () => {
+  await allure.step('Проверить, что URL включает "features"', async () => {
     await expect(page).toHaveURL(/.*features/);
   });
 
-  await allure.step('Verify that the page header is "Allure TestOps features"', async () => {
+  await allure.step('Проверить, что заголовок страницы "Возможности ТестОпс"', async () => {
     await expect(page.locator('h1')).toContainText('Allure TestOps features');
   });
 });
 
 // Test #8
 
-test('Should navigate to the Overview page via the sidebar (intentionally failed)', async ({ page }) => {
-  await allure.description('Verifies that the user can navigate to the Overview page via the sidebar');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Navigation');
-  await allure.story('Sidebar');
-  await allure.tags('Error', 'Sidebar', 'Navigation', 'UI');
+test('Должен перейти на страницу "Основные разделы интерфейса ТестОпс" через боковую панель (намеренно неуспешный)', async ({ page }) => {
+  await allure.description('Проверяет, что пользователь может перейти на страницу "Основные разделы интерфейса ТестОпс" через боковую панель');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Навигация');
+  await allure.story('Боковая панель');
+  await allure.tags('Ошибка', 'Боковая панель', 'Навигация', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Click the "Overview" link on the sidebar', async () => {
+  await allure.step('Нажать на ссылку "Обзор" на боковой панели', async () => {
     await page.click('text=Overview');
   });
 
-  await allure.step('Verify that the URL is "https://docs.qameta.io/allure-testops/getstarted/overview/"', async () => {
+  await allure.step('Проверить, что URL равен "https://qatools.ru/docs/overview/overview"', async () => {
     await expect(page).toHaveURL('https://intentionally-incorrect-url.com');
   });
 
-  await allure.step('Verify that the page header is "Allure TestOps interface"', async () => {
+  await allure.step('Проверить, что заголовок страницы "Основные разделы интерфейса ТестОпс"', async () => {
     await expect(page.locator('h1')).toContainText('Allure TestOps interface');
   });
 });
 
 // Test #9
 
-test('Should display the sidebar and Getting Started section when visiting the homepage', async ({ page }) => {
-  await allure.description('Verifies that the sidebar and the Getting Started section are visible on the homepage');
-  await allure.epic('Allure TestOps Documentation');
-  await allure.feature('Navigation');
+test('Должны отображаться боковая панель и раздел "Начало работы" при посещении домашней страницы', async ({ page }) => {
+  await allure.description('Проверяет, что боковая панель и раздел "Начало работы" видны на главной странице');
+  await allure.epic('Документация ТестОпс');
+  await allure.feature('Навигация');
   await allure.story('Sidebar');
-  await allure.tags('Sidebar', 'Navigation', 'UI');
+  await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
-  await allure.step('Navigate to the Allure TestOps documentation homepage', async () => {
+  await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
     await page.goto('https://docs.qameta.io/allure-testops/');
   });
 
-  await allure.step('Verify that the sidebar is visible', async () => {
+  await allure.step('Проверить, что боковая панель видна', async () => {
     await expect(page.locator('nav')).toBeVisible();
   });
 
-  await allure.step('Verify that the sidebar contains "Getting started"', async () => {
+  await allure.step('Проверить, что боковая панель содержит "Начало работы"', async () => {
     await expect(page.locator('nav')).toContainText('Getting started');
   });
 
-  await allure.step('Verify that the sidebar contains "Create a project"', async () => {
+  await allure.step('Проверить, что боковая панель содержит "Создайте проект"', async () => {
     await expect(page.locator('nav')).toContainText('Create a project');
   });
 
-  await allure.step('Verify that the sidebar contains "Run a manual test case"', async () => {
+  await allure.step('Проверить, что боковая панель содержит "Запустите ручной тест"', async () => {
     await expect(page.locator('nav')).toContainText('Run a manual test case');
   });
 
-  await allure.step('Verify that the sidebar contains "Run an automated test case"', async () => {
+  await allure.step('Проверить, что боковая панель содержит "Запустите автотест"', async () => {
     await expect(page.locator('nav')).toContainText('Run an automated test case');
   });
 
-  await allure.step('Verify that the sidebar contains "Create a combined launch"', async () => {
+  await allure.step('Проверить, что боковая панель содержит "Создайте комбинированный запуск"', async () => {
     await expect(page.locator('nav')).toContainText('Create a combined launch');
   });
 
-  await allure.step('Verify that the sidebar contains "Work with test results"', async () => {
+  await allure.step('Проверить, что боковая панель содержит "Обработайте результаты тестов"', async () => {
     await expect(page.locator('nav')).toContainText('Work with test results');
   });
 });
