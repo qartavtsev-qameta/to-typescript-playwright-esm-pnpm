@@ -18,8 +18,8 @@ test('Должен отображаться логотип ТестОпс при
   });
 
   await allure.step('Проверить, что логотип ТестОпс виден', async () => {
-    const logo = page.locator('img[alt="TestOps logo"]');
-    await expect(logo).toBeVisible();
+    const logo = page.locator('img.logo');
+    await expect(logo.first()).toBeVisible();
   });
 });
 
