@@ -157,8 +157,12 @@ test('Должен перейти на страницу "Архитектура 
     await page.goto('https://qatools.ru/docs/');
   });
 
+  await allure.step('Нажать на пункт "Установка ТестОпс", чтобы раскрыть подпункты', async () => {
+    await page.click('text=Установка ТестОпс');
+  });
+  
   await allure.step('Нажать на ссылку "Архитектура" на боковой панели', async () => {
-    await page.locator('a >> text=Архитектура').click();
+    await page.click('text=Архитектура');
   });
 
   await allure.step('Проверить, что URL включает "architecture"', async () => {
