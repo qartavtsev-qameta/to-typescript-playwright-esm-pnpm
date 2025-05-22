@@ -210,11 +210,15 @@ test('Должен перейти на страницу "Основные раз
   await allure.tags('Ошибка', 'Боковая панель', 'Навигация', 'Интерфейс');
 
   await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
-    await page.goto('https://docs.qameta.io/allure-testops/');
+    await page.goto('https://qatools.ru/docs/');
+  });
+
+  await allure.step('Нажать на пункт "Обзор ТестОпс" на боковой панели, чтобы раскрыть подпункты', async () => {
+    await page.click('text=Обзор ТестОпс');
   });
 
   await allure.step('Нажать на ссылку "Обзор" на боковой панели', async () => {
-    await page.click('text=Overview');
+    await page.click('text=Обзор');
   });
 
   await allure.step('Проверить, что URL равен "https://qatools.ru/docs/overview/overview"', async () => {
@@ -222,7 +226,7 @@ test('Должен перейти на страницу "Основные раз
   });
 
   await allure.step('Проверить, что заголовок на странице включает "Основные разделы интерфейса ТестОпс"', async () => {
-    await expect(page.locator('h1')).toContainText('Allure TestOps interface');
+    await expect(page.locator('h1')).toContainText('Основные разделы интерфейса ТестОпс');
   });
 });
 
