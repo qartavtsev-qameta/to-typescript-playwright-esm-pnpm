@@ -102,11 +102,11 @@ test('Должен перейти на страницу "Информация о
   await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
   await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
-    await page.goto('https://docs.qameta.io/allure-testops/');
+    await page.goto('https://qatools.ru/docs/');
   });
 
   await allure.step('Нажать на ссылку "Информация о релизах" на боковой панели', async () => {
-    await page.click('text=Release notes');
+    await page.click('text=Информация о релизах');
   });
 
   await allure.step('Проверить, что URL включает "release-notes"', async () => {
@@ -114,7 +114,7 @@ test('Должен перейти на страницу "Информация о
   });
 
   await allure.step('Проверить, что заголовок на странице включает "Информация о релизах ТестОпс"', async () => {
-    await expect(page.locator('h1')).toContainText('Release Notes');
+    await expect(page.locator('h1')).toContainText('Информация о релизах ТестОпс');
   });
 });
 
