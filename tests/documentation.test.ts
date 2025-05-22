@@ -158,7 +158,7 @@ test('Должен перейти на страницу "Архитектура 
   });
 
   await allure.step('Нажать на ссылку "Архитектура" на боковой панели', async () => {
-    await page.click('text=Архитектура');
+    await page.locator('a >> text=Архитектура').click();
   });
 
   await allure.step('Проверить, что URL включает "architecture"', async () => {
