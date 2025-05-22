@@ -184,11 +184,11 @@ test.skip('Должен перейти на страницу "Возможнос
   await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
   await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
-    await page.goto('https://docs.qameta.io/allure-testops/');
+    await page.goto('https://qatools.ru/docs/');
   });
 
-  await allure.step('Нажать на ссылку "Возможности" на боковой панели', async () => {
-    await page.click('text=Features');
+  await allure.step('Нажать на пункт "Возможности" на боковой панели', async () => {
+    await page.click('text=Возможности');
   });
 
   await allure.step('Проверить, что URL включает "features"', async () => {
@@ -196,7 +196,7 @@ test.skip('Должен перейти на страницу "Возможнос
   });
 
   await allure.step('Проверить, что заголовок на странице включает "Возможности ТестОпс"', async () => {
-    await expect(page.locator('h1')).toContainText('Allure TestOps features');
+    await expect(page.locator('h1')).toContainText('Возможности ТестОпс');
   });
 });
 
