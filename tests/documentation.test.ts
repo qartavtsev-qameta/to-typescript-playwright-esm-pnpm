@@ -128,11 +128,11 @@ test('Должен перейти на страницу "Часто задава
   await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
   await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
-    await page.goto('https://docs.qameta.io/allure-testops/');
+    await page.goto('https://qatools.ru/docs/');
   });
 
   await allure.step('Нажать на ссылку "Часто задаваемые вопросы" на боковой панели', async () => {
-    await page.click('text=FAQ');
+    await page.click('text=Часто задаваемые вопросы');
   });
 
   await allure.step('Проверить, что URL включает "faq"', async () => {
@@ -140,7 +140,7 @@ test('Должен перейти на страницу "Часто задава
   });
 
   await allure.step('Проверить, что заголовок на странице включает "Часто задаваемые вопросы"', async () => {
-    await expect(page.locator('h1')).toContainText('Frequently Asked Questions');
+    await expect(page.locator('h1')).toContainText('Часто задаваемые вопросы');
   });
 });
 
