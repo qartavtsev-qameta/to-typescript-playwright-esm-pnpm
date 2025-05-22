@@ -154,11 +154,11 @@ test('Должен перейти на страницу "Архитектура 
   await allure.tags('Боковая панель', 'Навигация', 'Интерфейс');
 
   await allure.step('Перейти на домашнюю страницу документации ТестОпс', async () => {
-    await page.goto('https://docs.qameta.io/allure-testops/');
+    await page.goto('https://qatools.ru/docs/');
   });
 
   await allure.step('Нажать на ссылку "Архитектура" на боковой панели', async () => {
-    await page.click('text=Architecture');
+    await page.click('text=Архитектура');
   });
 
   await allure.step('Проверить, что URL включает "architecture"', async () => {
@@ -166,7 +166,7 @@ test('Должен перейти на страницу "Архитектура 
   });
 
   await allure.step('Проверить, что заголовок на странице включает "Архитектура ТестОпс"', async () => {
-    await expect(page.locator('h1')).toContainText('Allure TestOps architecture');
+    await expect(page.locator('h1')).toContainText('Архитектура ТестОпс');
   });
 });
 
