@@ -218,7 +218,7 @@ test('Должен перейти на страницу "Основные раз
   });
 
   await allure.step('Нажать на ссылку "Обзор" на боковой панели', async () => {
-    await page.click('text=Обзор');
+    await page.getByText('Обзор', { exact: true }).click();
   });
 
   await allure.step('Проверить, что URL равен "https://qatools.ru/docs/overview/overview"', async () => {
